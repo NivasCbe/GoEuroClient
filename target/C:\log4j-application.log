@@ -1,0 +1,2 @@
+2016-04-17 22:06:58 INFO  HttpUtil:50 - URL formed ishttp://api.goeuro.com/api/v2/position/suggest/en/berlin
+2016-04-17 22:06:58 INFO  HttpUtil:62 - HttpURLConnection Successfull created
