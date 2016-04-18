@@ -52,6 +52,12 @@ public class DataUtil {
 			String locType =null;
 			PositionData positionData=new PositionData();
 			JSONArray responseArray = (JSONArray)parser.parse(response);
+			if(responseArray.size()==0){
+			JSONObject responseObject = (JSONObject)parser.parse(response);
+			if(responseObject!=null && responseObject.get("errorClass")!=null)
+				throw new GoEuroClientException("Error - "+responseObject.get("errorClass")+" Message - "+responseObject.get("message")+" Description"+responseObject.get("description"));
+			}
+			
 			for(int i=0;i<responseArray.size();i++){
 				positionData = new Gson().fromJson(responseArray.get(i).toString(), PositionData.class); 
 				positionDataList.add(positionData);
